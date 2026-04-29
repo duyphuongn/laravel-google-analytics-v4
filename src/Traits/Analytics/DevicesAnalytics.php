@@ -4,12 +4,14 @@ namespace Backstage\Analytics\Traits\Analytics;
 
 use Backstage\Analytics\Enums\Direction;
 use Backstage\Analytics\Period;
+use Google\ApiCore\ApiException;
+use Google\ApiCore\ValidationException;
 
 trait DevicesAnalytics
 {
     /**
-     * @throws \Google\ApiCore\ApiException
-     * @throws \Google\ApiCore\ValidationException
+     * @throws ApiException
+     * @throws ValidationException
      */
     public function topUsersByBrowser(Period $period, int $limit = 10): array
     {
@@ -25,8 +27,8 @@ trait DevicesAnalytics
     }
 
     /**
-     * @throws \Google\ApiCore\ApiException
-     * @throws \Google\ApiCore\ValidationException
+     * @throws ApiException
+     * @throws ValidationException
      */
     public function totalUsersByBrowser(Period $period): array
     {
@@ -40,8 +42,8 @@ trait DevicesAnalytics
     }
 
     /**
-     * @throws \Google\ApiCore\ApiException
-     * @throws \Google\ApiCore\ValidationException
+     * @throws ApiException
+     * @throws ValidationException
      */
     public function topUsersByOperatingSystem(Period $period, int $limit = 10): array
     {
@@ -57,8 +59,8 @@ trait DevicesAnalytics
     }
 
     /**
-     * @throws \Google\ApiCore\ApiException
-     * @throws \Google\ApiCore\ValidationException
+     * @throws ApiException
+     * @throws ValidationException
      */
     public function totalUsersByOperatingSystem(Period $period): array
     {
@@ -72,8 +74,8 @@ trait DevicesAnalytics
     }
 
     /**
-     * @throws \Google\ApiCore\ApiException
-     * @throws \Google\ApiCore\ValidationException
+     * @throws ApiException
+     * @throws ValidationException
      */
     public function topUsersByDeviceCategory(Period $period, int $limit = 10): array
     {
@@ -89,8 +91,8 @@ trait DevicesAnalytics
     }
 
     /**
-     * @throws \Google\ApiCore\ApiException
-     * @throws \Google\ApiCore\ValidationException
+     * @throws ApiException
+     * @throws ValidationException
      */
     public function totalUsersByDeviceCategory(Period $period): array
     {
@@ -104,8 +106,8 @@ trait DevicesAnalytics
     }
 
     /**
-     * @throws \Google\ApiCore\ApiException
-     * @throws \Google\ApiCore\ValidationException
+     * @throws ApiException
+     * @throws ValidationException
      */
     public function topUsersByMobileDeviceBranding(Period $period, int $limit = 10): array
     {
@@ -121,8 +123,8 @@ trait DevicesAnalytics
     }
 
     /**
-     * @throws \Google\ApiCore\ApiException
-     * @throws \Google\ApiCore\ValidationException
+     * @throws ApiException
+     * @throws ValidationException
      */
     public function totalUsersByMobileDeviceBranding(Period $period): array
     {
@@ -136,8 +138,8 @@ trait DevicesAnalytics
     }
 
     /**
-     * @throws \Google\ApiCore\ApiException
-     * @throws \Google\ApiCore\ValidationException
+     * @throws ApiException
+     * @throws ValidationException
      */
     public function topUsersByMobileDeviceModel(Period $period, int $limit = 10): array
     {
@@ -153,8 +155,8 @@ trait DevicesAnalytics
     }
 
     /**
-     * @throws \Google\ApiCore\ApiException
-     * @throws \Google\ApiCore\ValidationException
+     * @throws ApiException
+     * @throws ValidationException
      */
     public function totalUsersByMobileDeviceModel(Period $period): array
     {
@@ -168,8 +170,8 @@ trait DevicesAnalytics
     }
 
     /**
-     * @throws \Google\ApiCore\ApiException
-     * @throws \Google\ApiCore\ValidationException
+     * @throws ApiException
+     * @throws ValidationException
      */
     public function topUsersByMobileInputSelector(Period $period, int $limit = 10): array
     {
@@ -185,8 +187,8 @@ trait DevicesAnalytics
     }
 
     /**
-     * @throws \Google\ApiCore\ApiException
-     * @throws \Google\ApiCore\ValidationException
+     * @throws ApiException
+     * @throws ValidationException
      */
     public function totalUsersByMobileInputSelector(Period $period): array
     {
@@ -200,8 +202,8 @@ trait DevicesAnalytics
     }
 
     /**
-     * @throws \Google\ApiCore\ApiException
-     * @throws \Google\ApiCore\ValidationException
+     * @throws ApiException
+     * @throws ValidationException
      */
     public function topUsersByMobileDeviceInfo(Period $period, int $limit = 10): array
     {
@@ -217,8 +219,8 @@ trait DevicesAnalytics
     }
 
     /**
-     * @throws \Google\ApiCore\ApiException
-     * @throws \Google\ApiCore\ValidationException
+     * @throws ApiException
+     * @throws ValidationException
      */
     public function totalUsersByMobileDeviceInfo(Period $period): array
     {
@@ -232,8 +234,8 @@ trait DevicesAnalytics
     }
 
     /**
-     * @throws \Google\ApiCore\ApiException
-     * @throws \Google\ApiCore\ValidationException
+     * @throws ApiException
+     * @throws ValidationException
      */
     public function topUsersByMobileDeviceMarketingName(Period $period, int $limit = 10): array
     {
@@ -249,8 +251,8 @@ trait DevicesAnalytics
     }
 
     /**
-     * @throws \Google\ApiCore\ApiException
-     * @throws \Google\ApiCore\ValidationException
+     * @throws ApiException
+     * @throws ValidationException
      */
     public function totalUsersByMobileDeviceMarketingName(Period $period): array
     {
@@ -264,8 +266,8 @@ trait DevicesAnalytics
     }
 
     /**
-     * @throws \Google\ApiCore\ApiException
-     * @throws \Google\ApiCore\ValidationException
+     * @throws ApiException
+     * @throws ValidationException
      */
     public function topUsersByScreenResolution(Period $period, int $limit = 10): array
     {
@@ -281,8 +283,8 @@ trait DevicesAnalytics
     }
 
     /**
-     * @throws \Google\ApiCore\ApiException
-     * @throws \Google\ApiCore\ValidationException
+     * @throws ApiException
+     * @throws ValidationException
      */
     public function totalUsersByScreenResolution(Period $period): array
     {
@@ -296,8 +298,8 @@ trait DevicesAnalytics
     }
 
     /**
-     * @throws \Google\ApiCore\ApiException
-     * @throws \Google\ApiCore\ValidationException
+     * @throws ApiException
+     * @throws ValidationException
      */
     public function topUsersByPlatform(Period $period, int $limit = 10): array
     {
@@ -313,8 +315,8 @@ trait DevicesAnalytics
     }
 
     /**
-     * @throws \Google\ApiCore\ApiException
-     * @throws \Google\ApiCore\ValidationException
+     * @throws ApiException
+     * @throws ValidationException
      */
     public function totalUsersByPlatform(Period $period): array
     {

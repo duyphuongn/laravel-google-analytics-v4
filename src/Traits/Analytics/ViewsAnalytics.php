@@ -4,13 +4,15 @@ namespace Backstage\Analytics\Traits\Analytics;
 
 use Backstage\Analytics\Enums\Direction;
 use Backstage\Analytics\Period;
+use Google\ApiCore\ApiException;
+use Google\ApiCore\ValidationException;
 use Illuminate\Support\Arr;
 
 trait ViewsAnalytics
 {
     /**
-     * @throws \Google\ApiCore\ApiException
-     * @throws \Google\ApiCore\ValidationException
+     * @throws ApiException
+     * @throws ValidationException
      */
     public function totalViews(Period $period): int
     {
@@ -24,8 +26,8 @@ trait ViewsAnalytics
     }
 
     /**
-     * @throws \Google\ApiCore\ApiException
-     * @throws \Google\ApiCore\ValidationException
+     * @throws ApiException
+     * @throws ValidationException
      */
     public function totalViewsByDate(Period $period): array
     {
@@ -40,8 +42,8 @@ trait ViewsAnalytics
     }
 
     /**
-     * @throws \Google\ApiCore\ApiException
-     * @throws \Google\ApiCore\ValidationException
+     * @throws ApiException
+     * @throws ValidationException
      */
     public function totalViewsByPage(Period $period): array
     {
@@ -54,8 +56,8 @@ trait ViewsAnalytics
     }
 
     /**
-     * @throws \Google\ApiCore\ApiException
-     * @throws \Google\ApiCore\ValidationException
+     * @throws ApiException
+     * @throws ValidationException
      */
     public function topViewsByPage(Period $period): array
     {
@@ -63,8 +65,8 @@ trait ViewsAnalytics
     }
 
     /**
-     * @throws \Google\ApiCore\ApiException
-     * @throws \Google\ApiCore\ValidationException
+     * @throws ApiException
+     * @throws ValidationException
      */
     public function leastViewsByPage(Period $period): array
     {
@@ -83,8 +85,8 @@ trait ViewsAnalytics
     }
 
     /**
-     * @throws \Google\ApiCore\ApiException
-     * @throws \Google\ApiCore\ValidationException
+     * @throws ApiException
+     * @throws ValidationException
      */
     public function totalViewsByPagePath(Period $period): array
     {
@@ -97,8 +99,8 @@ trait ViewsAnalytics
     }
 
     /**
-     * @throws \Google\ApiCore\ApiException
-     * @throws \Google\ApiCore\ValidationException
+     * @throws ApiException
+     * @throws ValidationException
      */
     public function topViewsByPagePath(Period $period, int $limit = 10): array
     {
@@ -113,8 +115,8 @@ trait ViewsAnalytics
     }
 
     /**
-     * @throws \Google\ApiCore\ApiException
-     * @throws \Google\ApiCore\ValidationException
+     * @throws ApiException
+     * @throws ValidationException
      */
     public function totalViewsByPageTitle(Period $period): array
     {
@@ -127,8 +129,8 @@ trait ViewsAnalytics
     }
 
     /**
-     * @throws \Google\ApiCore\ApiException
-     * @throws \Google\ApiCore\ValidationException
+     * @throws ApiException
+     * @throws ValidationException
      */
     public function topViewsByPageTitle(Period $period, int $limit = 10): array
     {
@@ -143,8 +145,8 @@ trait ViewsAnalytics
     }
 
     /**
-     * @throws \Google\ApiCore\ApiException
-     * @throws \Google\ApiCore\ValidationException
+     * @throws ApiException
+     * @throws ValidationException
      */
     public function totalViewsByPageUrl(Period $period): array
     {
@@ -157,8 +159,8 @@ trait ViewsAnalytics
     }
 
     /**
-     * @throws \Google\ApiCore\ApiException
-     * @throws \Google\ApiCore\ValidationException
+     * @throws ApiException
+     * @throws ValidationException
      */
     public function topViewsByPageUrl(Period $period, int $limit = 10): array
     {
@@ -173,8 +175,8 @@ trait ViewsAnalytics
     }
 
     /**
-     * @throws \Google\ApiCore\ApiException
-     * @throws \Google\ApiCore\ValidationException
+     * @throws ApiException
+     * @throws ValidationException
      */
     public function totalViewsByCountry(Period $period): array
     {
@@ -187,8 +189,8 @@ trait ViewsAnalytics
     }
 
     /**
-     * @throws \Google\ApiCore\ApiException
-     * @throws \Google\ApiCore\ValidationException
+     * @throws ApiException
+     * @throws ValidationException
      */
     public function topViewsByCountry(Period $period, int $limit = 10): array
     {
@@ -203,8 +205,8 @@ trait ViewsAnalytics
     }
 
     /**
-     * @throws \Google\ApiCore\ApiException
-     * @throws \Google\ApiCore\ValidationException
+     * @throws ApiException
+     * @throws ValidationException
      */
     public function totalViewsByCity(Period $period): array
     {
@@ -217,8 +219,8 @@ trait ViewsAnalytics
     }
 
     /**
-     * @throws \Google\ApiCore\ApiException
-     * @throws \Google\ApiCore\ValidationException
+     * @throws ApiException
+     * @throws ValidationException
      */
     public function topViewsByCity(Period $period, int $limit = 10): array
     {

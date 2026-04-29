@@ -11,7 +11,11 @@ use Backstage\Analytics\Traits\Analytics\SessionsAnalytics;
 use Backstage\Analytics\Traits\Analytics\UsersAnalytics;
 use Backstage\Analytics\Traits\Analytics\ViewsAnalytics;
 use Backstage\Analytics\Traits\ResponseFormatterTrait;
-use Google\Analytics\Data\V1beta\BetaAnalyticsDataClient;
+use Google\Analytics\Data\V1beta\Client\BetaAnalyticsDataClient;
+use Google\Analytics\Data\V1beta\RunRealtimeReportRequest;
+use Google\Analytics\Data\V1beta\RunReportRequest;
+use Google\ApiCore\ApiException;
+use Google\ApiCore\ValidationException;
 
 class Analytics
 {
@@ -61,6 +65,9 @@ class Analytics
         return $this->propertyId;
     }
 
+    /**
+     * @throws ValidationException
+     */
     public function getClient(): BetaAnalyticsDataClient
     {
         return new BetaAnalyticsDataClient([
@@ -68,6 +75,10 @@ class Analytics
         ]);
     }
 
+    /**
+     * @throws ValidationException
+     * @throws ApiException
+     */
     public function getReport(GoogleAnalyticsService $googleAnalytics): AnalyticsResponse
     {
         $client = $this->getClient();
@@ -87,11 +98,15 @@ class Analytics
             'keepEmptyRows' => $googleAnalytics->keepEmptyRows,
         ];
 
-        $response = $client->runReport($parameters);
+        $response = $client->runReport(new RunReportRequest($parameters));
 
         return $this->formatResponse($response);
     }
 
+    /**
+     * @throws ValidationException
+     * @throws ApiException
+     */
     public function getRealtimeReport(GoogleAnalyticsService $googleAnalytics): AnalyticsResponse
     {
         $client = $this->getClient();
@@ -111,7 +126,7 @@ class Analytics
             'keepEmptyRows' => $googleAnalytics->keepEmptyRows,
         ];
 
-        $response = $client->runRealtimeReport($parameters);
+        $response = $client->runRealtimeReport(new RunRealtimeReportRequest($parameters));
 
         return $this->formatResponse($response);
     }
