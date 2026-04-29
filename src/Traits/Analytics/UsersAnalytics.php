@@ -3,13 +3,15 @@
 namespace Backstage\Analytics\Traits\Analytics;
 
 use Backstage\Analytics\Period;
+use Google\ApiCore\ApiException;
+use Google\ApiCore\ValidationException;
 use Illuminate\Support\Arr;
 
 trait UsersAnalytics
 {
     /**
-     * @throws \Google\ApiCore\ApiException
-     * @throws \Google\ApiCore\ValidationException
+     * @throws ApiException
+     * @throws ValidationException
      */
     public function totalUsers(Period $period): int
     {
@@ -24,8 +26,8 @@ trait UsersAnalytics
     }
 
     /**
-     * @throws \Google\ApiCore\ApiException
-     * @throws \Google\ApiCore\ValidationException
+     * @throws ApiException
+     * @throws ValidationException
      */
     public function totalUsersByDate(Period $period): array
     {
@@ -39,8 +41,8 @@ trait UsersAnalytics
     }
 
     /**
-     * @throws \Google\ApiCore\ApiException
-     * @throws \Google\ApiCore\ValidationException
+     * @throws ApiException
+     * @throws ValidationException
      */
     public function totalUsersByDatePerPage(Period $period): array
     {
@@ -55,8 +57,8 @@ trait UsersAnalytics
     }
 
     /**
-     * @throws \Google\ApiCore\ApiException
-     * @throws \Google\ApiCore\ValidationException
+     * @throws ApiException
+     * @throws ValidationException
      */
     public function totalUsersBySessionSource(Period $period): array
     {
@@ -70,8 +72,8 @@ trait UsersAnalytics
     }
 
     /**
-     * @throws \Google\ApiCore\ApiException
-     * @throws \Google\ApiCore\ValidationException
+     * @throws ApiException
+     * @throws ValidationException
      */
     public function totalUsersBySessionMedium(Period $period): array
     {
@@ -85,8 +87,8 @@ trait UsersAnalytics
     }
 
     /**
-     * @throws \Google\ApiCore\ApiException
-     * @throws \Google\ApiCore\ValidationException
+     * @throws ApiException
+     * @throws ValidationException
      */
     public function totalUsersBySessionDevice(Period $period): array
     {

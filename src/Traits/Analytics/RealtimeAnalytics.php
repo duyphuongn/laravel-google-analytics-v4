@@ -3,13 +3,15 @@
 namespace Backstage\Analytics\Traits\Analytics;
 
 use Backstage\Analytics\Period;
+use Google\ApiCore\ApiException;
+use Google\ApiCore\ValidationException;
 use Illuminate\Support\Arr;
 
 trait RealtimeAnalytics
 {
     /**
-     * @throws \Google\ApiCore\ApiException
-     * @throws \Google\ApiCore\ValidationException
+     * @throws ApiException
+     * @throws ValidationException
      */
     public function activeUsers(?Period $period = null, ?string $path = null): int|array
     {
