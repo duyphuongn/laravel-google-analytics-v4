@@ -4,12 +4,14 @@ namespace Backstage\Analytics\Traits\Analytics;
 
 use Backstage\Analytics\Enums\Direction;
 use Backstage\Analytics\Period;
+use Google\ApiCore\ApiException;
+use Google\ApiCore\ValidationException;
 
 trait DemographicAnalytics
 {
     /**
-     * @throws \Google\ApiCore\ApiException
-     * @throws \Google\ApiCore\ValidationException
+     * @throws ApiException
+     * @throws ValidationException
      */
     public function topUsersByLanguage(Period $period, int $limit = 10): array
     {
@@ -25,8 +27,8 @@ trait DemographicAnalytics
     }
 
     /**
-     * @throws \Google\ApiCore\ApiException
-     * @throws \Google\ApiCore\ValidationException
+     * @throws ApiException
+     * @throws ValidationException
      */
     public function totalUsersByLanguage(Period $period): array
     {
@@ -40,8 +42,8 @@ trait DemographicAnalytics
     }
 
     /**
-     * @throws \Google\ApiCore\ApiException
-     * @throws \Google\ApiCore\ValidationException
+     * @throws ApiException
+     * @throws ValidationException
      */
     public function topUsersByCountry(Period $period, int $limit = 10): array
     {
@@ -57,8 +59,8 @@ trait DemographicAnalytics
     }
 
     /**
-     * @throws \Google\ApiCore\ApiException
-     * @throws \Google\ApiCore\ValidationException
+     * @throws ApiException
+     * @throws ValidationException
      */
     public function totalUsersByCountry(Period $period): array
     {
@@ -72,8 +74,8 @@ trait DemographicAnalytics
     }
 
     /**
-     * @throws \Google\ApiCore\ApiException
-     * @throws \Google\ApiCore\ValidationException
+     * @throws ApiException
+     * @throws ValidationException
      */
     public function topUsersByCity(Period $period, int $limit = 10): array
     {
@@ -89,8 +91,8 @@ trait DemographicAnalytics
     }
 
     /**
-     * @throws \Google\ApiCore\ApiException
-     * @throws \Google\ApiCore\ValidationException
+     * @throws ApiException
+     * @throws ValidationException
      */
     public function totalUsersByCity(Period $period): array
     {
@@ -104,8 +106,8 @@ trait DemographicAnalytics
     }
 
     /**
-     * @throws \Google\ApiCore\ApiException
-     * @throws \Google\ApiCore\ValidationException
+     * @throws ApiException
+     * @throws ValidationException
      */
     public function totalUsersByGender(Period $period): array
     {
@@ -120,8 +122,8 @@ trait DemographicAnalytics
     }
 
     /**
-     * @throws \Google\ApiCore\ApiException
-     * @throws \Google\ApiCore\ValidationException
+     * @throws ApiException
+     * @throws ValidationException
      */
     public function totalUsersByAge(Period $period): array
     {

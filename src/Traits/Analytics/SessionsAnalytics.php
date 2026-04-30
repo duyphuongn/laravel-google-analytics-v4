@@ -3,13 +3,15 @@
 namespace Backstage\Analytics\Traits\Analytics;
 
 use Backstage\Analytics\Period;
+use Google\ApiCore\ApiException;
+use Google\ApiCore\ValidationException;
 use Illuminate\Support\Arr;
 
 trait SessionsAnalytics
 {
     /**
-     * @throws \Google\ApiCore\ApiException
-     * @throws \Google\ApiCore\ValidationException
+     * @throws ApiException
+     * @throws ValidationException
      */
     public function sessions(Period $period): int
     {
@@ -36,8 +38,8 @@ trait SessionsAnalytics
     }
 
     /**
-     * @throws \Google\ApiCore\ApiException
-     * @throws \Google\ApiCore\ValidationException
+     * @throws ApiException
+     * @throws ValidationException
      */
     public function averageSessionDuration(Period $period): float
     {
@@ -52,8 +54,8 @@ trait SessionsAnalytics
     }
 
     /**
-     * @throws \Google\ApiCore\ApiException
-     * @throws \Google\ApiCore\ValidationException
+     * @throws ApiException
+     * @throws ValidationException
      */
     public function averageSessionDurationByDate(Period $period): array
     {
@@ -69,8 +71,8 @@ trait SessionsAnalytics
     }
 
     /**
-     * @throws \Google\ApiCore\ApiException
-     * @throws \Google\ApiCore\ValidationException
+     * @throws ApiException
+     * @throws ValidationException
      */
     public function averageSessionDurationInSecondsByPage(Period $period): array
     {
@@ -84,8 +86,8 @@ trait SessionsAnalytics
     }
 
     /**
-     * @throws \Google\ApiCore\ApiException
-     * @throws \Google\ApiCore\ValidationException
+     * @throws ApiException
+     * @throws ValidationException
      */
     public function averagePageViewsPerSession(Period $period): float
     {
@@ -100,8 +102,8 @@ trait SessionsAnalytics
     }
 
     /**
-     * @throws \Google\ApiCore\ApiException
-     * @throws \Google\ApiCore\ValidationException
+     * @throws ApiException
+     * @throws ValidationException
      */
     public function averagePageViewsPerSessionByDate(Period $period): array
     {
@@ -117,8 +119,8 @@ trait SessionsAnalytics
     }
 
     /**
-     * @throws \Google\ApiCore\ApiException
-     * @throws \Google\ApiCore\ValidationException
+     * @throws ApiException
+     * @throws ValidationException
      */
     public function averageSessionDurationInSeconds(Period $period): float
     {
@@ -133,8 +135,8 @@ trait SessionsAnalytics
     }
 
     /**
-     * @throws \Google\ApiCore\ApiException
-     * @throws \Google\ApiCore\ValidationException
+     * @throws ApiException
+     * @throws ValidationException
      */
     public function averageSessionDurationInSecondsByDate(Period $period): array
     {
@@ -150,8 +152,8 @@ trait SessionsAnalytics
     }
 
     /**
-     * @throws \Google\ApiCore\ApiException
-     * @throws \Google\ApiCore\ValidationException
+     * @throws ApiException
+     * @throws ValidationException
      */
     public function bounceRate(Period $period): float
     {
@@ -166,8 +168,8 @@ trait SessionsAnalytics
     }
 
     /**
-     * @throws \Google\ApiCore\ApiException
-     * @throws \Google\ApiCore\ValidationException
+     * @throws ApiException
+     * @throws ValidationException
      */
     public function bounceRateByDate(Period $period): array
     {
@@ -183,8 +185,8 @@ trait SessionsAnalytics
     }
 
     /**
-     * @throws \Google\ApiCore\ApiException
-     * @throws \Google\ApiCore\ValidationException
+     * @throws ApiException
+     * @throws ValidationException
      */
     public function bounceRateByPage(Period $period): array
     {
